@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T19:43:17+00:00",
+  "title": "Design System: fuet.ch",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Electric Orange",
+        "canonical": "#ff4f00",
+        "tonalRamp": [
+          "oklch(15% 0.056 37)",
+          "oklch(26% 0.096 37)",
+          "oklch(38% 0.141 37)",
+          "oklch(50% 0.185 37)",
+          "oklch(62% 0.215 37)",
+          "oklch(74% 0.170 37)",
+          "oklch(85% 0.130 37)",
+          "oklch(95% 0.093 37)"
+        ]
+      },
+      "link": {
+        "role": "primary",
+        "displayName": "Burnt Orange",
+        "canonical": "#c2410c",
+        "tonalRamp": [
+          "oklch(15% 0.043 38)",
+          "oklch(26% 0.075 38)",
+          "oklch(38% 0.110 38)",
+          "oklch(50% 0.145 38)",
+          "oklch(62% 0.168 38)",
+          "oklch(74% 0.133 38)",
+          "oklch(85% 0.101 38)",
+          "oklch(95% 0.072 38)"
+        ]
+      },
+      "link-dark": {
+        "role": "primary",
+        "displayName": "Electric Orange (dark links)",
+        "canonical": "#ff4f00",
+        "tonalRamp": [
+          "oklch(15% 0.056 37)",
+          "oklch(26% 0.096 37)",
+          "oklch(38% 0.141 37)",
+          "oklch(50% 0.185 37)",
+          "oklch(62% 0.215 37)",
+          "oklch(74% 0.170 37)",
+          "oklch(85% 0.130 37)",
+          "oklch(95% 0.093 37)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Coffee Ink",
+        "canonical": "#201515",
+        "tonalRamp": [
+          "oklch(15% 0.005 19)",
+          "oklch(26% 0.008 19)",
+          "oklch(38% 0.011 19)",
+          "oklch(50% 0.015 19)",
+          "oklch(62% 0.017 19)",
+          "oklch(74% 0.014 19)",
+          "oklch(85% 0.011 19)",
+          "oklch(95% 0.008 19)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Coffee Ink (dark)",
+        "canonical": "#fffefb",
+        "tonalRamp": [
+          "oklch(15% 0.001 91)",
+          "oklch(26% 0.002 91)",
+          "oklch(38% 0.003 91)",
+          "oklch(50% 0.003 91)",
+          "oklch(62% 0.004 91)",
+          "oklch(74% 0.003 91)",
+          "oklch(85% 0.002 91)",
+          "oklch(95% 0.002 91)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Warm Grey",
+        "canonical": "#605d52",
+        "tonalRamp": [
+          "oklch(15% 0.004 94)",
+          "oklch(26% 0.008 94)",
+          "oklch(38% 0.011 94)",
+          "oklch(50% 0.015 94)",
+          "oklch(62% 0.017 94)",
+          "oklch(74% 0.013 94)",
+          "oklch(85% 0.010 94)",
+          "oklch(95% 0.007 94)"
+        ]
+      },
+      "body-dark": {
+        "role": "neutral",
+        "displayName": "Warm Grey (dark)",
+        "canonical": "#c5c0b1",
+        "tonalRamp": [
+          "oklch(15% 0.005 92)",
+          "oklch(26% 0.009 92)",
+          "oklch(38% 0.014 92)",
+          "oklch(50% 0.018 92)",
+          "oklch(62% 0.021 92)",
+          "oklch(74% 0.016 92)",
+          "oklch(85% 0.012 92)",
+          "oklch(95% 0.009 92)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Cream Canvas",
+        "canonical": "#fffefb",
+        "tonalRamp": [
+          "oklch(15% 0.001 91)",
+          "oklch(26% 0.002 91)",
+          "oklch(38% 0.003 91)",
+          "oklch(50% 0.003 91)",
+          "oklch(62% 0.004 91)",
+          "oklch(74% 0.003 91)",
+          "oklch(85% 0.002 91)",
+          "oklch(95% 0.002 91)"
+        ]
+      },
+      "canvas-dark": {
+        "role": "neutral",
+        "displayName": "Cream Canvas (dark)",
+        "canonical": "#1a1210",
+        "tonalRamp": [
+          "oklch(15% 0.004 34)",
+          "oklch(26% 0.006 34)",
+          "oklch(38% 0.009 34)",
+          "oklch(50% 0.012 34)",
+          "oklch(62% 0.014 34)",
+          "oklch(74% 0.011 34)",
+          "oklch(85% 0.008 34)",
+          "oklch(95% 0.006 34)"
+        ]
+      },
+      "canvas-soft": {
+        "role": "neutral",
+        "displayName": "Soft Cream",
+        "canonical": "#f8f4f0",
+        "tonalRamp": [
+          "oklch(15% 0.002 68)",
+          "oklch(26% 0.003 68)",
+          "oklch(38% 0.004 68)",
+          "oklch(50% 0.006 68)",
+          "oklch(62% 0.007 68)",
+          "oklch(74% 0.005 68)",
+          "oklch(85% 0.004 68)",
+          "oklch(95% 0.003 68)"
+        ]
+      },
+      "canvas-soft-dark": {
+        "role": "neutral",
+        "displayName": "Soft Cream (dark)",
+        "canonical": "#241c19",
+        "tonalRamp": [
+          "oklch(15% 0.003 42)",
+          "oklch(26% 0.006 42)",
+          "oklch(38% 0.009 42)",
+          "oklch(50% 0.012 42)",
+          "oklch(62% 0.013 42)",
+          "oklch(74% 0.011 42)",
+          "oklch(85% 0.008 42)",
+          "oklch(95% 0.006 42)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c5c0b1",
+        "tonalRamp": [
+          "oklch(15% 0.005 92)",
+          "oklch(26% 0.009 92)",
+          "oklch(38% 0.014 92)",
+          "oklch(50% 0.018 92)",
+          "oklch(62% 0.021 92)",
+          "oklch(74% 0.016 92)",
+          "oklch(85% 0.012 92)",
+          "oklch(95% 0.009 92)"
+        ]
+      },
+      "hairline-dark": {
+        "role": "neutral",
+        "displayName": "Hairline (dark)",
+        "canonical": "#3a332d",
+        "tonalRamp": [
+          "oklch(15% 0.004 63)",
+          "oklch(26% 0.006 63)",
+          "oklch(38% 0.009 63)",
+          "oklch(50% 0.012 63)",
+          "oklch(62% 0.014 63)",
+          "oklch(74% 0.011 63)",
+          "oklch(85% 0.008 63)",
+          "oklch(95% 0.006 63)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Control Border",
+        "canonical": "#939084",
+        "tonalRamp": [
+          "oklch(15% 0.004 95)",
+          "oklch(26% 0.008 95)",
+          "oklch(38% 0.011 95)",
+          "oklch(50% 0.015 95)",
+          "oklch(62% 0.017 95)",
+          "oklch(74% 0.014 95)",
+          "oklch(85% 0.010 95)",
+          "oklch(95% 0.007 95)"
+        ]
+      },
+      "border-dark": {
+        "role": "neutral",
+        "displayName": "Control Border (dark)",
+        "canonical": "#807d72",
+        "tonalRamp": [
+          "oklch(15% 0.004 94)",
+          "oklch(26% 0.007 94)",
+          "oklch(38% 0.011 94)",
+          "oklch(50% 0.014 94)",
+          "oklch(62% 0.016 94)",
+          "oklch(74% 0.013 94)",
+          "oklch(85% 0.010 94)",
+          "oklch(95% 0.007 94)"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Selection",
+        "canonical": "#ffe3d5",
+        "tonalRamp": [
+          "oklch(15% 0.009 48)",
+          "oklch(26% 0.016 48)",
+          "oklch(38% 0.023 48)",
+          "oklch(50% 0.030 48)",
+          "oklch(62% 0.035 48)",
+          "oklch(74% 0.028 48)",
+          "oklch(85% 0.021 48)",
+          "oklch(95% 0.015 48)"
+        ]
+      },
+      "selection-dark": {
+        "role": "neutral",
+        "displayName": "Selection (dark)",
+        "canonical": "#7c2d12",
+        "tonalRamp": [
+          "oklch(15% 0.029 38)",
+          "oklch(26% 0.050 38)",
+          "oklch(38% 0.074 38)",
+          "oklch(50% 0.097 38)",
+          "oklch(62% 0.113 38)",
+          "oklch(74% 0.089 38)",
+          "oklch(85% 0.068 38)",
+          "oklch(95% 0.049 38)"
+        ]
+      },
+      "band": {
+        "role": "neutral",
+        "displayName": "Band",
+        "canonical": "#201515",
+        "tonalRamp": [
+          "oklch(15% 0.005 19)",
+          "oklch(26% 0.008 19)",
+          "oklch(38% 0.011 19)",
+          "oklch(50% 0.015 19)",
+          "oklch(62% 0.017 19)",
+          "oklch(74% 0.014 19)",
+          "oklch(85% 0.011 19)",
+          "oklch(95% 0.008 19)"
+        ]
+      },
+      "band-dark": {
+        "role": "neutral",
+        "displayName": "Band (dark)",
+        "canonical": "#241c19",
+        "tonalRamp": [
+          "oklch(15% 0.003 42)",
+          "oklch(26% 0.006 42)",
+          "oklch(38% 0.009 42)",
+          "oklch(50% 0.012 42)",
+          "oklch(62% 0.013 42)",
+          "oklch(74% 0.011 42)",
+          "oklch(85% 0.008 42)",
+          "oklch(95% 0.006 42)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The post title."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page heading on home, tag, author, privacy and 404 pages."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "The year in a post list, in Electric Orange, with tabular figures."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Second-level headings inside a post."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "A post title in a list; third-level headings in a post share the size."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "FUET. in the masthead."
+      },
+      "neighbour": {
+        "displayName": "Neighbour",
+        "purpose": "Older and Newer post links at the end of a post."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, about 70 characters per line."
+      },
+      "excerpt": {
+        "displayName": "Excerpt",
+        "purpose": "The excerpt under a post title in a list."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Author and date lines, navigation, footer text."
+      },
+      "meta-small": {
+        "displayName": "Meta small",
+        "purpose": "Captions and the meta line in list rows."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Inline code and code blocks."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "neighbours-stack",
+        "value": "max-width: 30rem"
+      },
+      {
+        "name": "prose-hyphens",
+        "value": "max-width: 40rem"
+      },
+      {
+        "name": "cover-crop",
+        "value": "min-width: 42rem"
+      },
+      {
+        "name": "year-hangs",
+        "value": "min-width: 62rem"
+      }
+    ],
+    "theme": {
+      "mechanism": "CSS light-dark() on :root; color-scheme is 'light dark' by default (Auto) and is forced by :root[data-theme='light'|'dark'].",
+      "default": "auto",
+      "storage": "localStorage key 'theme'; Auto stores nothing."
+    },
+    "focusRing": {
+      "value": "outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm)"
+    }
+  },
+  "components": [
+    {
+      "name": "Wordmark",
+      "kind": "nav",
+      "refersTo": "wordmark",
+      "description": "Site name in the masthead; the dot is the only orange in the frame.",
+      "html": "<a class=\"ds-wordmark\" href=\"#\">FUET<span aria-hidden=\"true\">.</span></a>",
+      "css": ".ds-wordmark { font: 700 1.5rem/1 var(--display); letter-spacing: -0.01em; color: var(--ink); text-decoration: none; padding-block: 0.75rem; display: inline-block; } .ds-wordmark span { color: var(--accent); } .ds-wordmark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Wordmark left, Portfolio link and theme select right.",
+      "html": "<header class=\"ds-masthead\"><a class=\"ds-mh-wordmark\" href=\"#\">FUET<span aria-hidden=\"true\">.</span></a><nav><a href=\"#\">Portfolio</a><label class=\"ds-mh-theme\"><select aria-label=\"Theme\"><option>Auto</option><option>Light</option><option>Dark</option></select></label></nav></header>",
+      "css": ".ds-masthead { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; background: var(--canvas); } .ds-mh-wordmark { font: 700 1.5rem/1 var(--display); letter-spacing: -0.01em; color: var(--ink); text-decoration: none; } .ds-mh-wordmark span { color: var(--accent); } .ds-masthead nav { display: flex; align-items: center; gap: 1.25rem; font-size: 1rem; } .ds-masthead nav a { color: var(--ink); padding-block: 0.6rem; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-masthead nav a:hover { text-decoration-thickness: 2px; } .ds-mh-theme { position: relative; } .ds-mh-theme select { appearance: none; font: inherit; color: var(--ink); background: var(--canvas); border: 1px solid var(--border); border-radius: var(--radius-sm); height: 2.75rem; padding: 0 2rem 0 0.75rem; } .ds-mh-theme::after { content: ''; position: absolute; right: 0.75rem; top: calc(50% - 0.2rem); width: 0.55rem; height: 0.55rem; border: solid var(--ink); border-width: 0 1.5px 1.5px 0; transform: translateY(-25%) rotate(45deg); pointer-events: none; } .ds-masthead a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); } .ds-masthead select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Theme select",
+      "kind": "input",
+      "refersTo": "theme-select",
+      "description": "The only control on the site: Auto, Light, Dark.",
+      "html": "<label class=\"ds-theme\"><select aria-label=\"Theme\"><option>Auto</option><option>Light</option><option>Dark</option></select></label>",
+      "css": ".ds-theme { position: relative; display: inline-block; } .ds-theme select { appearance: none; font: 1rem/1.6 system-ui, sans-serif; color: var(--ink); background: var(--canvas); border: 1px solid var(--border); border-radius: var(--radius-sm); height: 2.75rem; padding: 0 2rem 0 0.75rem; } .ds-theme::after { content: ''; position: absolute; right: 0.75rem; top: calc(50% - 0.2rem); width: 0.55rem; height: 0.55rem; border: solid var(--ink); border-width: 0 1.5px 1.5px 0; transform: translateY(-25%) rotate(45deg); pointer-events: none; } .ds-theme select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Year group",
+      "kind": "custom",
+      "refersTo": "year-numeral",
+      "description": "A year numeral with its post rows: title, excerpt, author and date. Used on home, tag and author pages.",
+      "html": "<section class=\"ds-year\"><h2>2023</h2><ul><li><h3><a href=\"#\">A post title in the list</a></h3><p>One sentence that says what the post is about.</p><p class=\"ds-year-meta\">Author Name · 12 May 2023</p></li><li><h3><a href=\"#\">Another post from the same year</a></h3><p>Its excerpt, in the system font at a slightly smaller size.</p><p class=\"ds-year-meta\">Author Name · 3 March 2023</p></li></ul></section>",
+      "css": ".ds-year { color: var(--ink); font: 1.125rem/1.6 system-ui, sans-serif; } .ds-year h2 { font-family: var(--display); color: var(--accent); font-size: 2rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; margin: 0 0 1.25rem; } .ds-year ul { list-style: none; margin: 0; padding: 0; } .ds-year li + li { margin-top: 2rem; } .ds-year h3 { font-family: var(--display); font-size: 1.375rem; font-weight: 600; line-height: 1.25; margin: 0; } .ds-year h3 a { color: var(--ink); text-decoration: none; } .ds-year h3 a:hover { text-decoration: underline 2px var(--accent); } .ds-year li p { margin: 0.35rem 0 0; font-size: 1.0625rem; line-height: 1.5; } .ds-year li .ds-year-meta { color: var(--body); font-size: 0.9375rem; } .ds-year a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Text link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A link in running text: Burnt Orange in light, Electric Orange in dark, always underlined.",
+      "html": "<p class=\"ds-text\">Running text with <a href=\"#\">a link in it</a> at 18 px.</p>",
+      "css": ".ds-text { margin: 0; color: var(--ink); font: 1.125rem/1.6 system-ui, sans-serif; } .ds-text a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-text a:hover { text-decoration-thickness: 2px; } .ds-text a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Quote panel",
+      "kind": "card",
+      "refersTo": "quote-panel",
+      "description": "A quote in a post: soft cream ground, 12 px corners, no stripe.",
+      "html": "<blockquote class=\"ds-quote\"><p>A quoted paragraph sits on the soft cream ground.</p></blockquote>",
+      "css": ".ds-quote { margin: 0; padding: 1.1rem 1.4rem; background: var(--canvas-soft); color: var(--ink); border-radius: var(--radius); font: 1.125rem/1.6 system-ui, sans-serif; } .ds-quote p { margin: 0; }"
+    },
+    {
+      "name": "Code",
+      "kind": "card",
+      "refersTo": "code-block",
+      "description": "Code block and inline code, both on soft cream.",
+      "html": "<div class=\"ds-code\"><p>Run <code>npm run build</code> first.</p><pre><code>import pandas as pd\ndf = pd.read_csv(\"data.csv\")</code></pre></div>",
+      "css": ".ds-code { color: var(--ink); font: 1.125rem/1.6 system-ui, sans-serif; } .ds-code p { margin: 0 0 1.25em; } .ds-code code, .ds-code pre { font: 0.9em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; } .ds-code code { background: var(--canvas-soft); border-radius: var(--radius-sm); padding: 0.1em 0.3em; } .ds-code pre { margin: 0; background: var(--canvas-soft); border-radius: var(--radius); padding: 1rem 1.25rem; overflow-x: auto; } .ds-code pre code { padding: 0; }"
+    },
+    {
+      "name": "Neighbour links",
+      "kind": "nav",
+      "refersTo": "neighbour-link",
+      "description": "Older and Newer posts at the end of a post, under a hairline.",
+      "html": "<nav class=\"ds-neighbours\"><div><p>Older</p><a href=\"#\">The post before this one</a></div><div><p>Newer</p><a href=\"#\">The post after this one</a></div></nav>",
+      "css": ".ds-neighbours { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); } .ds-neighbours p { margin: 0; color: var(--body); font: 0.9375rem/1.6 system-ui, sans-serif; } .ds-neighbours a { display: block; color: var(--ink); font: 600 1.125rem/1.3 var(--display); text-decoration: none; } .ds-neighbours a:hover { text-decoration: underline 2px var(--accent); } .ds-neighbours > :last-child { text-align: right; } .ds-neighbours a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    },
+    {
+      "name": "Footer band",
+      "kind": "nav",
+      "refersTo": "footer-band",
+      "description": "The one dark surface: site description and the Privacy and RSS links.",
+      "html": "<footer class=\"ds-band\"><p>A blog by Gabriel Torres Gamez and friends.</p><nav><a href=\"#\">Privacy</a><a href=\"#\">RSS</a></nav></footer>",
+      "css": ".ds-band { background: var(--band); color: #f8f4f0; font: 1rem/1.6 system-ui, sans-serif; padding: 2.5rem var(--gutter); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.75rem 2rem; } .ds-band p { margin: 0; } .ds-band nav { display: flex; gap: 1.25rem; } .ds-band a { color: #fffefb; padding-block: 0.6rem; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } .ds-band a:hover { text-decoration-thickness: 2px; } .ds-band a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Only the Post",
+    "overview": "fuet.ch is a blog where the page is the post. One calm reading column sits on a warm cream ground, framed by a slim masthead at the top and a dark coffee band at the bottom. On wide screens the frame uses the width: lists show each post's cover beside its row, and a post puts its cover beside the title and a contents list beside the text. Nothing competes with the text: no cards, no motion.\n\nThe mood is warm and quiet. Coffee-brown ink on cream, one electric orange used sparingly, and soft cream panels for quotes and code. The visitor is here to read, so every choice serves a long text on a phone or a laptop: an 18 px body, a line height of 1.6, and a column about 70 characters wide.\n\nThe palette derives from the Zapier DESIGN.md in VoltAgent/awesome-design-md; the dark values come from the sister site arc.fuet.ch.",
+    "keyCharacteristics": [
+      "A 72 rem page for the masthead, lists and post header; a 40 rem reading column for text.",
+      "Warm cream and coffee neutrals; one orange accent.",
+      "Bricolage Grotesque for headings, the wordmark and year numerals; the system font for reading.",
+      "Light and dark themes with the same structure; Auto is the default.",
+      "Flat surfaces. Depth comes from tone, not shadows.",
+      "No motion beyond hover and focus states."
+    ],
+    "rules": [
+      {
+        "name": "The Large Orange Rule",
+        "body": "In the light theme, Electric Orange is for large text (the 2 rem year numerals), the wordmark dot and focus rings. Body-size links use Burnt Orange.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Value Rule",
+        "body": "A new colour is added as one `light-dark()` pair on the root. No colour is set for one theme only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Borders Rule",
+        "body": "Use `hairline` for decoration and `border` for anything a visitor must see to operate a control.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Bricolage Grotesque speaks in headings, the wordmark, year numerals and neighbour links. Everything a visitor reads at length is in the system font. No Inter, no Degular, no third family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Headings and labels are in sentence case at normal letter spacing. Nothing is set in uppercase with wide tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Shadow Rule",
+        "body": "No surface casts a shadow, at rest or on hover. If something must stand apart, give it the Soft Cream ground or more space.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep running text in the 40 rem reading column with 18 px body text and a line height of 1.6.",
+      "Do use Bricolage Grotesque Variable for headings, the wordmark and year numerals, and the system font stack for everything else.",
+      "Do use Burnt Orange (#c2410c) for links in body text in the light theme, and Electric Orange (#ff4f00) for links in the dark theme.",
+      "Do define every colour as a `light-dark()` pair, and check both themes.",
+      "Do use 12 px corners for images and panels, and 6 px corners for controls, inline code and focus rings.",
+      "Do separate things with space first, then a Soft Cream panel, then a 1 px hairline.",
+      "Do show a 2 px Electric Orange focus ring, 3 px away from the element, on everything that takes focus.",
+      "Do set the `lang` of each post on its title and its text, so hyphenation is correct."
+    ],
+    "donts": [
+      "Don't use Electric Orange for body-size text on the cream canvas; it reaches only 3.27:1.",
+      "Don't use Inter, Degular or any other web font. One font file is loaded and no more.",
+      "Don't use pill shapes, or any radius other than 6 px and 12 px.",
+      "Don't add shadows.",
+      "Don't add motion beyond hover and focus states: no transitions on load, no scroll effects.",
+      "Don't turn the post list into a card grid. Covers sit beside rows; they do not become tiles.",
+      "Don't use a hairline as the border of a control; use the Control Border.",
+      "Don't load anything from another server: no font services, no embeds, no analytics."
+    ]
+  }
+}

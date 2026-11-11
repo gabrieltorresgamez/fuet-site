@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import { getEntries, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { allPosts, formatDate, tagSlug } from '../lib';
+
+export async function getStaticPaths() {
+	const posts = await allPosts();
+	return posts.map((post, i) => ({
+		params: { slug: post.id },
+		props: { post, newer: posts[i - 1], older: posts[i + 1] },
+	}));
+}
+
+const { post, newer, older } = Astro.props;
+const { title, date, tags, excerpt, cover, coverAlt, coverCaption, lang } = post.data;
+const authors = await getEntries(post.data.authors);
+const { Content, headings } = await render(post);
+// Contents list: the shallowest heading level that has at least three headings.
+const tocDepth = [2, 3, 4].find((d) => headings.filter((h) => h.depth === d).length >= 3);
+const toc = headings.filter((h) => h.depth === tocDepth);
+const minutes = Math.max(1, Math.round((post.body ?? '').split(/\s+/).length / 220));
+// Captions come from the migration as Markdown with links only.
+const caption = coverCaption?.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+---
+
+<Base title={title} description={excerpt} image={cover?.src} article>
+	<article>
+		<header class:list={['post-head', { 'has-cover': cover }]}>
+			<div>
+				<h1 lang={lang}>{title}</h1>
+				<p class="meta">
+					By {authors.map((a, i) => <>{i > 0 && ', '}<a href={`/author/${a.id}/`}>{a.data.name}</a></>)} ·{' '}
+					<time datetime={date.toISOString()}>{formatDate(date)}</time> · {minutes} min read
+				</p>
+			</div>
+			{
+				cover && (
+					<figure class="cover">
+						<Image
+							src={cover}
+							alt={coverAlt ?? ''}
+							widths={[480, 768, 1216]}
+							sizes="(min-width: 62rem) 34rem, 100vw"
+							loading="eager"
+							fetchpriority="high"
+						/>
+						{caption && <figcaption set:html={caption} />}
+					</figure>
+				)
+			}
+		</header>
+		<div class="post-body">
+			<div>
+				<div class="prose" lang={lang}>
+					<Content />
+				</div>
+				<footer class="post-foot">
+			<p class="meta">
+				Written by {authors.map((a, i) => <>{i > 0 && ', '}<a href={`/author/${a.id}/`}>{a.data.name}</a></>)}
+			</p>
+			{
+				tags.length > 0 && (
+					<p class="meta">
+						Filed under {tags.map((t, i) => <>{i > 0 && ', '}<a href={`/tag/${tagSlug(t)}/`}>{t}</a></>)}
+					</p>
+				)
+			}
+			<nav class="neighbours" aria-label="More posts">
+				<div>
+					{older && <><p class="meta">Older</p><a href={`/${older.id}/`} lang={older.data.lang}>{older.data.title}</a></>}
+				</div>
+				<div>
+					{newer && <><p class="meta">Newer</p><a href={`/${newer.id}/`} lang={newer.data.lang}>{newer.data.title}</a></>}
+				</div>
+			</nav>
+				</footer>
+			</div>
+			{
+				toc.length > 0 && (
+					<nav class="toc" aria-label="On this page">
+						<p class="meta">On this page</p>
+						<ol lang={lang}>
+							{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+						</ol>
+					</nav>
+				)
+			}
+		</div>
+	</article>
+</Base>

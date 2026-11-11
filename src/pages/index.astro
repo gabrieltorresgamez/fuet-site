@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { allPosts } from '../lib';
+
+const posts = await allPosts();
+---
+
+<Base>
+	<header class="intro">
+		<h1>A blog by Gabriel&nbsp;Torres&nbsp;Gamez and friends.</h1>
+	</header>
+	<PostList posts={posts} />
+</Base>

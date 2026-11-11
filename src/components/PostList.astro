@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import { getEntries } from 'astro:content';
+import { formatDate, type Post } from '../lib';
+
+interface Props {
+	posts: Post[];
+}
+
+const { posts } = Astro.props;
+const eager = new Set(posts.slice(0, 2).map((post) => post.id)); // the rest load when scrolled to
+const years = Map.groupBy(posts, (post) => post.data.date.getFullYear());
+---
+
+{
+	[...years].map(([year, posts]) => (
+		<section class="year">
+			<h2>{year}</h2>
+			<ul>
+				{posts.map(async (post) => (
+					<li class:list={{ 'has-thumb': post.data.cover }}>
+						<div class="row-text">
+							<h3 lang={post.data.lang}>
+								<a href={`/${post.id}/`}>{post.data.title}</a>
+							</h3>
+							<p lang={post.data.lang}>{post.data.excerpt}</p>
+							<p class="meta">
+								{(await getEntries(post.data.authors)).map((a) => a.data.name).join(', ')} ·{' '}
+								<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+							</p>
+						</div>
+						{
+							post.data.cover && (
+								// Same target as the title link, so it is hidden from keyboard and screen readers.
+								<a class="thumb" href={`/${post.id}/`} tabindex="-1" aria-hidden="true">
+									<Image
+										src={post.data.cover}
+										alt=""
+										widths={[320, 480, 800]}
+										sizes="(min-width: 40rem) 15rem, 100vw"
+										loading={eager.has(post.id) ? 'eager' : 'lazy'}
+									/>
+								</a>
+							)
+						}
+					</li>
+				))}
+			</ul>
+		</section>
+	))
+}

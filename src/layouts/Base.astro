@@ -1,0 +1,94 @@
+---
+import '@fontsource-variable/bricolage-grotesque/wght.css';
+import headingFont from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	article?: boolean;
+}
+
+const site = 'FUET';
+const tagline = 'A blog by Gabriel Torres Gamez and friends.';
+const { title, description = tagline, image, article = false } = Astro.props;
+const fullTitle = title ? `${title} · ${site}` : `${site} · A blog by Gabriel Torres Gamez and friends`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="alternate" type="application/rss+xml" title={site} href="/rss/" />
+		<link rel="preload" href={headingFont} as="font" type="font/woff2" crossorigin />
+		<meta property="og:site_name" content={site} />
+		<meta property="og:type" content={article ? 'article' : 'website'} />
+		<meta property="og:title" content={title ?? site} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		{image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+		<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+		<meta name="theme-color" content="#fffefb" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#1a1210" media="(prefers-color-scheme: dark)" />
+		<!-- Applies a saved theme before the first paint. Auto stores nothing. -->
+		<script is:inline>
+			try {
+				const theme = localStorage.getItem('theme');
+				if (theme) document.documentElement.dataset.theme = theme;
+			} catch {}
+		</script>
+	</head>
+	<body>
+		<header class="wrap masthead">
+			<a class="skip" href="#main">Skip to content</a>
+			<a class="wordmark" href="/" aria-label="FUET, home">FUET<span aria-hidden="true">.</span></a>
+			<nav aria-label="Site">
+				<a href="https://torres.swiss/">Portfolio</a>
+				<label class="theme" hidden>
+					<span class="sr-only">Theme</span>
+					<select id="theme">
+						<option value="auto">Auto</option>
+						<option value="light">Light</option>
+						<option value="dark">Dark</option>
+					</select>
+				</label>
+				<script is:inline>
+					{
+						const root = document.documentElement;
+						const select = document.getElementById('theme');
+						select.value = root.dataset.theme || 'auto';
+						select.parentElement.hidden = false;
+						select.addEventListener('change', () => {
+							const auto = select.value === 'auto';
+							if (auto) delete root.dataset.theme;
+							else root.dataset.theme = select.value;
+							try {
+								if (auto) localStorage.removeItem('theme');
+								else localStorage.setItem('theme', select.value);
+							} catch {}
+						});
+					}
+				</script>
+			</nav>
+		</header>
+		<main id="main" class="wrap">
+			<slot />
+		</main>
+		<footer class="band">
+			<div class="wrap">
+				<p>{tagline}</p>
+				<nav aria-label="Footer">
+					<a href="/privacy/">Privacy</a>
+					<a href="/rss/">RSS</a>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>

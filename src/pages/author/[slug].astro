@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { allPosts } from '../../lib';
+
+export async function getStaticPaths() {
+	const posts = await allPosts();
+	return (await getCollection('authors')).map((author) => ({
+		params: { slug: author.id },
+		props: { author, posts: posts.filter((p) => p.data.authors.some((a) => a.id === author.id)) },
+	}));
+}
+
+const { author, posts } = Astro.props;
+---
+
+<Base title={author.data.name} description={author.data.bio ?? `Posts by ${author.data.name}.`}>
+	<header class="intro">
+		<h1>{author.data.name}</h1>
+		{author.data.bio && <p class="meta">{author.data.bio}</p>}
+		<p class="meta">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+	</header>
+	<PostList posts={posts} />
+</Base>
