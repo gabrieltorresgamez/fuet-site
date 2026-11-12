@@ -4,9 +4,9 @@
   --canvas: light-dark(#fffefb, #1a1210);
   --canvas-soft: light-dark(#f8f4f0, #241c19);
   --ink: light-dark(#201515, #fffefb);
-  --body: light-dark(#605d52, #c5c0b1); /* meta lines */
+  --ink-muted: light-dark(#605d52, #c5c0b1); /* meta lines */
   --hairline: light-dark(#c5c0b1, #3a332d); /* decorative rules */
-  --border: light-dark(#939084, #807d72); /* control borders, 3:1 */
+  --border: light-dark(#8a877b, #807d72); /* control borders, 3:1 */
   --accent: #ff4f00; /* large text and focus rings only: 3.27:1 on cream */
   --link: light-dark(#c2410c, #ff4f00);
   --selection: light-dark(#ffe3d5, #7c2d12);
@@ -25,7 +25,7 @@
   :root {
     --canvas: light-dark(#fffefb, #120c0a);
     --canvas-soft: light-dark(#f8f4f0, #1a1210);
-    --body: light-dark(#4a4740, #c5c0b1);
+    --ink-muted: light-dark(#4a4740, #c5c0b1);
     --hairline: #807d72;
     --border: light-dark(#605d52, #a8a397);
     --accent: light-dark(#7c2d12, #ff8a50);
@@ -33,21 +33,15 @@
     --panel-outline: 1px solid var(--hairline);
   }
 }
-:root[data-theme='hc'] {
+:root[data-theme^='hc'] {
   --canvas: light-dark(#fffefb, #120c0a);
   --canvas-soft: light-dark(#f8f4f0, #1a1210);
-  --body: light-dark(#4a4740, #c5c0b1);
+  --ink-muted: light-dark(#4a4740, #c5c0b1);
   --hairline: #807d72;
   --border: light-dark(#605d52, #a8a397);
   --accent: light-dark(#7c2d12, #ff8a50);
   --link: var(--accent);
   --panel-outline: 1px solid var(--hairline);
-}
-:root[data-theme='light'] {
-  color-scheme: light;
-}
-:root[data-theme='dark'] {
-  color-scheme: dark;
 }
 
 *,
@@ -118,7 +112,7 @@ p {
   margin-inline: auto;
 }
 .meta {
-  color: var(--body);
+  color: var(--ink-muted);
   font-size: 1rem;
 }
 .meta a {
@@ -373,7 +367,7 @@ main {
   margin-top: 0.5rem;
 }
 .toc a {
-  color: var(--body);
+  color: var(--ink-muted);
   text-decoration: underline transparent;
   transition: text-decoration-color 160ms ease; /* not color: it would lag behind a theme switch */
 }
@@ -396,7 +390,7 @@ main {
 figcaption,
 .prose p:has(> img) + p:has(> em:only-child) {
   margin-top: 0.5rem;
-  color: var(--body);
+  color: var(--ink-muted);
   font-size: 0.9375rem;
   line-height: 1.45;
   text-align: center;
@@ -454,7 +448,7 @@ figcaption,
   margin-top: 0.5em;
 }
 .prose li::marker {
-  color: var(--body);
+  color: var(--ink-muted);
 }
 .prose blockquote {
   margin-inline: 0;

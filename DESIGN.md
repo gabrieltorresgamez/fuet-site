@@ -15,7 +15,7 @@ colors:
   canvas-soft-dark: "#241c19"
   hairline: "#c5c0b1"
   hairline-dark: "#3a332d"
-  border: "#939084"
+  border: "#8a877b"
   border-dark: "#807d72"
   selection: "#ffe3d5"
   selection-dark: "#7c2d12"
@@ -187,11 +187,11 @@ Warm neutrals with a single orange. Every colour has a light and a dark value, s
 - **Cream Canvas** (`canvas`, #fffefb; dark: `canvas-dark`, #1a1210): the page ground. The dark value is a coffee brown, not black.
 - **Soft Cream** (`canvas-soft`, #f8f4f0; dark: `canvas-soft-dark`, #241c19): panels for quotes, code blocks and inline code.
 - **Hairline** (`hairline`, #c5c0b1; dark: `hairline-dark`, #3a332d): decorative 1 px rules only: the rule above the post footer and horizontal rules in posts.
-- **Control Border** (`border`, #939084; dark: `border-dark`, #807d72): the border of the theme select and the scrollbar thumb. It keeps 3:1 against the canvas, which a hairline does not.
+- **Control Border** (`border`, #8a877b; dark: `border-dark`, #807d72): the border of the theme select and the scrollbar thumb. It keeps 3:1 against the canvas, which a hairline does not.
 - **Selection** (`selection`, #ffe3d5; dark: `selection-dark`, #7c2d12): the text selection background, with ink text on top.
 
 ### High contrast
-Served under `prefers-contrast: more` and when the visitor picks High contrast (`data-theme="hc"`); light or dark still follows the system. Same token names, AAA values (Torres `hc-light` and `hc-dark`): `canvas` #fffefb / #120c0a, `canvas-soft` #f8f4f0 / #1a1210, `body` #4a4740 / #c5c0b1, `hairline` #807d72, `border` #605d52 / #a8a397, and `accent` and `link` both Rust #7c2d12 / Light Orange #ff8a50. Quote panels, code blocks and inline code get a 1 px `hairline` outline.
+Served under `prefers-contrast: more` and when the visitor picks High contrast (`data-theme="hc"`); light or dark still follows the system. Same token names, AAA values (Torres `hc-light` and `hc-dark`): `canvas` #fffefb / #120c0a, `canvas-soft` #f8f4f0 / #1a1210, `ink-muted` #4a4740 / #c5c0b1, `hairline` #807d72, `border` #605d52 / #a8a397, and `accent` and `link` both Rust #7c2d12 / Light Orange #ff8a50. Quote panels, code blocks and inline code get a 1 px `hairline` outline.
 
 ### Named Rules
 **The Large Orange Rule.** In the light theme, Electric Orange is for large text (the 2 rem year numerals), the wordmark dot and focus rings. Body-size links use Burnt Orange.

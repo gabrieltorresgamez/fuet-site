@@ -37,12 +37,25 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 		<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
 		<meta name="theme-color" content="#fffefb" media="(prefers-color-scheme: light)" />
 		<meta name="theme-color" content="#1a1210" media="(prefers-color-scheme: dark)" />
-		<!-- Applies a saved theme before the first paint. Auto stores nothing. -->
+		<!-- Shared Torres theme script: applies the saved or system theme before the first paint. -->
 		<script is:inline>
-			try {
-				const theme = localStorage.getItem('theme');
-				if (theme) document.documentElement.dataset.theme = theme;
-			} catch {}
+			(function () {
+				var root = document.documentElement;
+				var dark = matchMedia('(prefers-color-scheme: dark)');
+				var more = matchMedia('(prefers-contrast: more)');
+				function applyTheme() {
+					var choice = 'auto'; // auto | light | dark | hc
+					try { choice = localStorage.getItem('theme') || 'auto'; } catch (e) {}
+					var scheme = choice === 'light' || choice === 'dark' ? choice : dark.matches ? 'dark' : 'light';
+					var hc = choice === 'hc' || (choice === 'auto' && more.matches);
+					root.dataset.theme = hc ? 'hc-' + scheme : scheme;
+					root.style.colorScheme = scheme;
+				}
+				applyTheme();
+				dark.addEventListener('change', applyTheme);
+				more.addEventListener('change', applyTheme);
+				window.applyTheme = applyTheme;
+			})();
 		</script>
 		<!-- Skips the cover morph when this page's end of it is out of view, or the image flies across the screen edge. -->
 		<script is:inline>
@@ -81,18 +94,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 				</label>
 				<script is:inline>
 					{
-						const root = document.documentElement;
 						const select = document.getElementById('theme');
-						select.value = root.dataset.theme || 'auto';
+						try { select.value = localStorage.getItem('theme') || 'auto'; } catch {}
 						select.parentElement.hidden = false;
 						select.addEventListener('change', () => {
-							const auto = select.value === 'auto';
-							if (auto) delete root.dataset.theme;
-							else root.dataset.theme = select.value;
 							try {
-								if (auto) localStorage.removeItem('theme');
+								if (select.value === 'auto') localStorage.removeItem('theme');
 								else localStorage.setItem('theme', select.value);
 							} catch {}
+							applyTheme();
 						});
 					}
 				</script>
