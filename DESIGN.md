@@ -19,20 +19,12 @@ colors:
   border-dark: "#807d72"
   selection: "#ffe3d5"
   selection-dark: "#7c2d12"
-  band: "#201515"
-  band-dark: "#241c19"
 typography:
   display:
     fontFamily: "'Bricolage Grotesque Variable', system-ui, sans-serif"
     fontSize: "clamp(2.25rem, 7vw, 3.5rem)"
     fontWeight: 700
     lineHeight: 1.05
-    letterSpacing: "-0.025em"
-  headline:
-    fontFamily: "'Bricolage Grotesque Variable', system-ui, sans-serif"
-    fontSize: "clamp(2rem, 5.2vw, 4rem)"
-    fontWeight: 600
-    lineHeight: 1.1
     letterSpacing: "-0.025em"
   numeral:
     fontFamily: "'Bricolage Grotesque Variable', system-ui, sans-serif"
@@ -59,7 +51,7 @@ typography:
     lineHeight: 1.25
   wordmark:
     fontFamily: "'Bricolage Grotesque Variable', system-ui, sans-serif"
-    fontSize: "1.5rem"
+    fontSize: "1.25rem"
     fontWeight: 700
     lineHeight: 1
     letterSpacing: "-0.01em"
@@ -89,7 +81,7 @@ typography:
     fontWeight: 400
     lineHeight: 1.45
   mono:
-    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
     fontSize: "0.9em"
     fontWeight: 400
     lineHeight: 1.5
@@ -101,8 +93,8 @@ spacing:
   page: "72rem"
   column: "40rem"
   flow: "1.25em"
-  row: "2rem"
-  year: "3.5rem"
+  row: "2.5rem"
+  year: "3rem"
   post-foot: "4rem"
 components:
   wordmark:
@@ -112,7 +104,7 @@ components:
   nav-link:
     textColor: "{colors.ink}"
     typography: "{typography.meta}"
-    padding: "0.6rem 0"
+    padding: "0.75rem 0"
   theme-select:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
@@ -156,8 +148,8 @@ components:
     rounded: "{rounded.md}"
     padding: "0.75rem"
   footer-band:
-    backgroundColor: "{colors.band}"
-    textColor: "{colors.canvas-soft}"
+    backgroundColor: "{colors.canvas-soft}"
+    textColor: "{colors.ink}"
     typography: "{typography.meta}"
     padding: "2.5rem 0"
 ---
@@ -168,22 +160,22 @@ components:
 
 **Creative North Star: "Only the Post"**
 
-fuet.ch is a blog where the page is the post. One calm reading column sits on a warm cream ground, framed by a slim masthead at the top and a dark coffee band at the bottom. On wide screens the frame uses the width: lists show each post's cover beside its row, and a post puts its cover beside the title and a contents list beside the text. Nothing competes with the text: no cards.
+fuet.ch is a blog where the page is the post. One calm reading column sits on a warm cream ground, framed by a slim masthead at the top and a soft cream band at the bottom. On wide screens the frame uses the width: lists show each post's cover beside its row, and a post puts its cover beside the title and a contents list beside the text. Nothing competes with the text: no cards.
 
 The mood is warm and quiet. Coffee-brown ink on cream, one electric orange used sparingly, and soft cream panels for quotes and code. The visitor is here to read, so every choice serves a long text on a phone or a laptop: an 18 px body, a line height of 1.6, and a column about 70 characters wide.
 
-The palette derives from the Zapier DESIGN.md in VoltAgent/awesome-design-md; the dark values come from the sister site arc.fuet.ch.
+The site follows Torres, the design system shared with arc.fuet.ch and torres.swiss (https://claude.ai/artifact/XnsorDXwN2bgYhrJtiUEJi). Where this file and Torres differ, Torres wins.
 
 **Key Characteristics:**
 - A 72 rem page for the masthead, lists and post header; a 40 rem reading column for text.
 - Warm cream and coffee neutrals; one orange accent.
 - Bricolage Grotesque for headings, the wordmark and year numerals; the system font for reading.
-- Light and dark themes with the same structure; Auto is the default.
+- Light, dark and high-contrast themes with the same structure; Auto is the default.
 - Flat surfaces. Depth comes from tone, not shadows.
 
 ## Colors
 
-Warm neutrals with a single orange. Every colour has a light and a dark value, set together with CSS `light-dark()`. The theme follows the system (Auto) unless the visitor picks Light or Dark, which sets a `data-theme` attribute on the root element.
+Warm neutrals with a single orange. Every colour has a light and a dark value, set together with CSS `light-dark()`. The theme follows the system (Auto) unless the visitor picks Light, Dark or High contrast, which sets a `data-theme` attribute on the root element.
 
 ### Primary
 - **Electric Orange** (`accent`, #ff4f00): year numerals, the dot in the wordmark, focus rings, the text cursor, and the 2 px underline that appears when a post title is hovered. It is the same value in both themes. On the cream canvas it reaches only 3.27:1, so in the light theme it never colours body-size text.
@@ -197,7 +189,9 @@ Warm neutrals with a single orange. Every colour has a light and a dark value, s
 - **Hairline** (`hairline`, #c5c0b1; dark: `hairline-dark`, #3a332d): decorative 1 px rules only: the rule above the post footer and horizontal rules in posts.
 - **Control Border** (`border`, #939084; dark: `border-dark`, #807d72): the border of the theme select and the scrollbar thumb. It keeps 3:1 against the canvas, which a hairline does not.
 - **Selection** (`selection`, #ffe3d5; dark: `selection-dark`, #7c2d12): the text selection background, with ink text on top.
-- **Band** (`band`, #201515; dark: `band-dark`, #241c19): the footer band. Its text is cream in both themes.
+
+### High contrast
+Served under `prefers-contrast: more` and when the visitor picks High contrast (`data-theme="hc"`); light or dark still follows the system. Same token names, AAA values (Torres `hc-light` and `hc-dark`): `canvas` #fffefb / #120c0a, `canvas-soft` #f8f4f0 / #1a1210, `body` #4a4740 / #c5c0b1, `hairline` #807d72, `border` #605d52 / #a8a397, and `accent` and `link` both Rust #7c2d12 / Light Orange #ff8a50. Quote panels, code blocks and inline code get a 1 px `hairline` outline.
 
 ### Named Rules
 **The Large Orange Rule.** In the light theme, Electric Orange is for large text (the 2 rem year numerals), the wordmark dot and focus rings. Body-size links use Burnt Orange.
@@ -215,12 +209,11 @@ Warm neutrals with a single orange. Every colour has a light and a dark value, s
 **Character:** Bricolage gives headings and numerals a warm, slightly irregular voice. The system font keeps long text familiar and costs no download. Only one font file is loaded, and it is preloaded.
 
 ### Hierarchy
-- **Display** (700, clamp(2.25rem, 7vw, 3.5rem), 1.05, -0.025em): the post title. Balanced wrapping; long German words may hyphenate.
-- **Headline** (600, clamp(2rem, 5.2vw, 4rem), 1.08): the page heading on home, tag, author, privacy and 404 pages.
+- **Display** (700, clamp(2.25rem, 7vw, 3.5rem), 1.05, -0.025em): the post title and the page heading on home, tag, author, privacy and 404 pages. Balanced wrapping; long German words may hyphenate.
 - **Numeral** (700, 2rem, 1, tabular figures): the year in a post list, in Electric Orange.
 - **Section** (650, 1.75rem, 1.2, -0.01em): second-level headings inside a post.
 - **Title** (600, 1.375rem, 1.25): a post title in a list. Third-level headings inside a post use the same size at weight 650 and line height 1.2.
-- **Wordmark** (700, 1.5rem, 1, -0.01em): "FUET." in the masthead.
+- **Wordmark** (700, 1.25rem, 1, -0.01em): "FUET." in the masthead.
 - **Neighbour** (600, 1.125rem, 1.3): the Older and Newer post links at the end of a post.
 - **Body** (400, 1.125rem, 1.6): running text. The column holds about 70 characters per line. Paragraphs use `text-wrap: pretty`.
 - **Excerpt** (400, 1.0625rem, 1.5): the excerpt under a post title in a list.
@@ -236,7 +229,7 @@ Warm neutrals with a single orange. Every colour has a light and a dark value, s
 
 Every page sits in one centred frame, 72 rem wide, with a gutter of clamp(1.25rem, 5vw, 2rem) on each side. The masthead, the main content and the footer content all start at its left edge. Running text never grows wider than the 40 rem reading column. The page is a three-row grid (masthead, content, footer) at least as tall as the viewport, so the footer band sits at the bottom on short pages.
 
-Rhythm inside a post is relative to the text: 1.25em between blocks, 2.25em above a heading and 0.6em below it, 2.5em around a horizontal rule. Lists of posts use fixed steps: 2.5rem between posts, 3.5rem between years, and clamp(2.5rem, 7vw, 4rem) under the page heading. The post footer starts 4rem below the text. Main content has clamp(1.5rem, 5vw, 3.5rem) above it and 5rem below.
+Rhythm inside a post is relative to the text: 1.25em between blocks, 2em above a heading and 0.5em below it, 2.5em around a horizontal rule. Lists of posts use fixed steps: 2.5rem between posts, 3rem between years, and clamp(2.5rem, 7vw, 4rem) under the page heading. The post footer starts 4rem below the text. Main content has clamp(1.5rem, 5vw, 3rem) above it and 4rem below. Every margin, gap and padding comes from the Torres scale (0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3, 4 rem), except the panel padding and inline code padding.
 
 Responsive changes:
 - From 62rem up, each year numeral sits in its own 9rem column and stays in view (sticky) while its posts scroll. A post puts its title and cover side by side, the cover at 3:2, and shows a sticky contents list to the right of the reading column when the post has three or more top-level headings.
@@ -249,7 +242,7 @@ Touch targets: the theme select is 2.75rem (44 px) high, and navigation links ca
 
 ## Elevation & Depth
 
-The system is flat. There are no shadows anywhere. Depth comes from tone: Soft Cream panels sit one step off the canvas, and the footer band is the one dark surface. Separation inside the column comes from space first and a 1 px hairline second.
+The system is flat. There are no shadows anywhere. Depth comes from tone: Soft Cream panels and the footer band sit one step off the canvas. Separation inside the column comes from space first and a 1 px hairline second.
 
 ### Named Rules
 **The No Shadow Rule.** No surface casts a shadow, at rest or on hover. If something must stand apart, give it the Soft Cream ground or more space.
@@ -274,7 +267,7 @@ The site has few components, and all are quiet. Text does the work; controls sta
 ### Theme select
 - **Style:** a native select with its own look: canvas ground, ink text, 1 px Control Border, 6 px radius, 2.75rem high, padding 0 2rem 0 0.75rem.
 - **Chevron:** drawn in CSS from two 1.5 px ink borders, rotated 45 degrees. It is not an icon font or an image.
-- **Options:** Auto, Light, Dark. Auto is the default and stores nothing. The select is hidden until its script runs, so it never appears without working.
+- **Options:** Auto, Light, Dark, High contrast. Auto is the default and stores nothing. The select is hidden until its script runs, so it never appears without working.
 - **Focus:** the shared 2 px orange ring.
 
 ### Links
@@ -285,18 +278,21 @@ The site has few components, and all are quiet. Text does the work; controls sta
 ### Post list (home, tag, author)
 - **Structure:** posts grouped by year, newest first. Each year has an orange numeral and a list of rows.
 - **Row:** title (Title style), excerpt (Excerpt style), then a small meta line with authors and date. The post's cover, if it has one, is shown with 12 px corners and links to the post; it is hidden from screen readers because the title link already goes there. No card, no border, no background.
-- **Page heading:** a Headline, with an optional meta line under it (post count, author bio) at 0.75rem distance.
+- **Page heading:** a Display heading, with an optional meta line under it (post count, author bio) at 0.75rem distance.
 
 ### Post page
-- **Head:** the title in Display, a meta line 1.25rem below (authors, date, reading time), then the cover image 1.75rem below that.
-- **Captions:** centred, Warm Grey, 0.9375rem, upright, 0.6rem under the image.
+- **Head:** the title in Display, a meta line 1.25rem below (authors, date, reading time), then the cover image 2rem below that.
+- **Captions:** centred, Warm Grey, 0.9375rem, upright, 0.5rem under the image.
 - **Quote panel:** Soft Cream ground, 12 px radius, padding 1.1rem 1.4rem. No side stripe and no quotation mark.
 - **Code:** blocks on Soft Cream with 12 px radius and padding 1rem 1.25rem, scrolling sideways when needed; inline code on Soft Cream with 6 px radius.
 - **Foot:** a hairline, then "Written by" and "Filed under" meta lines, then the Older and Newer links in two columns, the newer one aligned right.
 
 ### Footer band
-- **Style:** full-width band in the Band colour with 2.5rem vertical padding. Cream text at 1rem; the site description on the left, Privacy and RSS links on the right. On narrow screens the two parts wrap.
-- **Links:** cream and underlined.
+- **Style:** full-width Soft Cream band with a 1 px hairline on top and 2.5rem vertical padding. Ink text at 1rem; the site description on the left, Privacy and RSS links on the right. On narrow screens the two parts wrap.
+- **Links:** ink and underlined.
+
+### Favicon
+- **Style:** the Torres "F" mark: a cream uppercase F on an Electric Orange square with corners at 7/32 of its side.
 
 ### Skip link
 - **Style:** ink ground, canvas text, 6 px radius. It sits off-screen and moves to the top left when it receives focus.
