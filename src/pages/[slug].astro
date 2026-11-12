@@ -44,6 +44,7 @@ const caption = coverCaption?.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">
 							sizes="(min-width: 62rem) 34rem, 100vw"
 							loading="eager"
 							fetchpriority="high"
+							style={`view-transition-name: cover-${post.id}; view-transition-class: cover`}
 						/>
 						{caption && <figcaption set:html={caption} />}
 					</figure>

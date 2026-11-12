@@ -168,7 +168,7 @@ components:
 
 **Creative North Star: "Only the Post"**
 
-fuet.ch is a blog where the page is the post. One calm reading column sits on a warm cream ground, framed by a slim masthead at the top and a dark coffee band at the bottom. On wide screens the frame uses the width: lists show each post's cover beside its row, and a post puts its cover beside the title and a contents list beside the text. Nothing competes with the text: no cards, no motion.
+fuet.ch is a blog where the page is the post. One calm reading column sits on a warm cream ground, framed by a slim masthead at the top and a dark coffee band at the bottom. On wide screens the frame uses the width: lists show each post's cover beside its row, and a post puts its cover beside the title and a contents list beside the text. Nothing competes with the text: no cards.
 
 The mood is warm and quiet. Coffee-brown ink on cream, one electric orange used sparingly, and soft cream panels for quotes and code. The visitor is here to read, so every choice serves a long text on a phone or a laptop: an 18 px body, a line height of 1.6, and a column about 70 characters wide.
 
@@ -180,7 +180,6 @@ The palette derives from the Zapier DESIGN.md in VoltAgent/awesome-design-md; th
 - Bricolage Grotesque for headings, the wordmark and year numerals; the system font for reading.
 - Light and dark themes with the same structure; Auto is the default.
 - Flat surfaces. Depth comes from tone, not shadows.
-- No motion beyond hover and focus states.
 
 ## Colors
 
@@ -319,7 +318,6 @@ The site has few components, and all are quiet. Text does the work; controls sta
 - **Don't** use Inter, Degular or any other web font. One font file is loaded and no more.
 - **Don't** use pill shapes, or any radius other than 6 px and 12 px.
 - **Don't** add shadows.
-- **Don't** add motion beyond hover and focus states: no transitions on load, no scroll effects.
 - **Don't** turn the post list into a card grid. Covers sit beside rows; they do not become tiles.
 - **Don't** use a hairline as the border of a control; use the Control Border.
 - **Don't** load anything from another server: no font services, no embeds, no analytics.

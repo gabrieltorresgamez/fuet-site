@@ -39,6 +39,7 @@ const years = Map.groupBy(posts, (post) => post.data.date.getFullYear());
 										widths={[320, 480, 800]}
 										sizes="(min-width: 40rem) 15rem, 100vw"
 										loading={eager.has(post.id) ? 'eager' : 'lazy'}
+										style={`view-transition-name: cover-${post.id}; view-transition-class: cover`}
 									/>
 								</a>
 							)

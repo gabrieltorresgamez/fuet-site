@@ -17,6 +17,7 @@
   --gutter: clamp(1.25rem, 5vw, 2rem);
   --radius: 12px;
   --radius-sm: 6px;
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); /* on-screen movement: the cover morph */
 }
 :root[data-theme='light'] {
   color-scheme: light;
@@ -288,10 +289,8 @@ main {
 }
 .year h3 a {
   color: var(--ink);
-  text-decoration: none;
-}
-.year h3 a:hover {
-  text-decoration: underline 2px var(--accent);
+  text-decoration: underline 2px transparent;
+  transition: text-decoration-color 160ms ease;
 }
 .year li p {
   margin-top: 0.35rem;
@@ -354,11 +353,8 @@ main {
 }
 .toc a {
   color: var(--body);
-  text-decoration: none;
-}
-.toc a:hover {
-  color: var(--ink);
-  text-decoration: underline;
+  text-decoration: underline transparent;
+  transition: text-decoration-color 160ms ease; /* not color: it would lag behind a theme switch */
 }
 .cover {
   margin: 1.75rem 0 0;
@@ -495,11 +491,9 @@ figcaption,
   display: block;
   color: var(--ink);
   font: 600 1.125rem/1.3 var(--display);
-  text-decoration: none;
+  text-decoration: underline 2px transparent;
+  transition: text-decoration-color 160ms ease;
   overflow-wrap: break-word;
-}
-.neighbours a:hover {
-  text-decoration: underline 2px var(--accent);
 }
 .neighbours .meta {
   font-size: 0.9375rem;
@@ -514,4 +508,43 @@ figcaption,
   .neighbours > :last-child {
     text-align: left;
   }
+}
+
+/* Motion: hover fades on fine pointers, and the list thumbnail morphs into the post cover. */
+@media (hover: hover) and (pointer: fine) {
+  .year h3 a:hover,
+  .neighbours a:hover {
+    text-decoration-color: var(--accent);
+  }
+  .toc a:hover {
+    color: var(--ink);
+    text-decoration-color: currentcolor;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+::view-transition-group(.cover) {
+  animation-duration: 250ms;
+  animation-timing-function: var(--ease-in-out);
+}
+/* Thumbnail and cover differ in aspect ratio: crop instead of stretching. */
+::view-transition-old(.cover),
+::view-transition-new(.cover) {
+  height: 100%;
+  object-fit: cover;
+}
+/* The page itself swaps at once, and covers with no partner on the other page do not fade. */
+::view-transition-group(root) {
+  animation: none; /* otherwise every navigation blocks clicks for 250ms */
+}
+::view-transition-old(root),
+::view-transition-old(*):only-child {
+  display: none;
+}
+::view-transition-new(root),
+::view-transition-new(*):only-child {
+  animation: none;
 }

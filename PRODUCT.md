@@ -34,7 +34,7 @@ A personal blog that asks nothing of the reader: no account, no newsletter promp
 - Pages: home (post list, newest first), post, author, tag, privacy notice, 404, RSS feed, sitemap.
 - All current URLs keep working: `/<slug>/`, `/author/<slug>/`, `/tag/<slug>/`, `/rss/`. `/privacy-policy/` redirects to `/privacy/`.
 - Interface language is English (navigation, dates, labels). Posts are mostly German, some English; each post declares its language so hyphenation and screen readers are correct.
-- No client JavaScript except the theme switch. No cookies. No third-party requests: fonts, images and scripts are self-hosted, and embeds in old posts become plain links.
+- No client JavaScript except the theme switch and a few lines that skip the cover transition when the cover or its thumbnail is out of view. No cookies. No third-party requests: fonts, images and scripts are self-hosted, and embeds in old posts become plain links.
 - No members, newsletter, comments or search.
 - The privacy notice follows the Swiss FADP. The only personal data processed is request logs (kept 7 days) and the authors' names, bios and photos.
 - Undecided: whether old posts get light edits (typos, dead links) during migration or stay as they are.
@@ -47,7 +47,6 @@ A personal blog that asks nothing of the reader: no account, no newsletter promp
 - Visual starting point is the Zapier-derived DESIGN.md in this repo: warm cream canvas, coffee ink, one orange accent (`#ff4f00`), 12 px radius, no pills.
 - Headings in Bricolage Grotesque Variable, self-hosted; body text in the system font stack. No Inter.
 - Theme switch with Light, Dark and Auto; Auto is the default. Dark uses arc.fuet.ch's coffee-brown values.
-- Almost no motion: hover and focus states only.
 
 ## Evidence on Hand
 

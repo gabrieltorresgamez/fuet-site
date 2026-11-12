@@ -44,6 +44,25 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 				if (theme) document.documentElement.dataset.theme = theme;
 			} catch {}
 		</script>
+		<!-- Skips the cover morph when this page's end of it is out of view, or the image flies across the screen edge. -->
+		<script is:inline>
+			{
+				const skipIfHidden = (e, img) => {
+					if (!e.viewTransition || !img) return;
+					const r = img.getBoundingClientRect();
+					if (r.bottom > 0 && r.top < innerHeight) return;
+					e.viewTransition.ready.catch(() => {}); // skipping rejects this promise
+					e.viewTransition.skipTransition();
+				};
+				// This page's end of the morph: the post cover, or on a list the thumbnail of the post at the other URL.
+				// ponytail: no Navigation API means no check on lists coming in, and the morph just plays.
+				const partner = (url) =>
+					document.querySelector('.cover img') ??
+					(url && document.querySelector(`a.thumb[href="${new URL(url).pathname}"] img`));
+				addEventListener('pageswap', (e) => skipIfHidden(e, partner(e.activation?.entry.url)));
+				addEventListener('pagereveal', (e) => skipIfHidden(e, partner(window.navigation?.activation?.from?.url)));
+			}
+		</script>
 	</head>
 	<body>
 		<header class="wrap masthead">
